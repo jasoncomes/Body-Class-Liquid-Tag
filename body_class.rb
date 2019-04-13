@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# body_class / https://www.notion.so/highereducation/body_class-40bbcdc644fb4dcda3e285825ae73efb
+# body_class / https://github.com/jasoncomes/Body-Class-Liquid-Tag
 # Takes the classes following the open tag and appends them to the class property on the body element.
 # {% body_class class anotherclass %}
 
@@ -19,7 +19,6 @@ module Jekyll
       @classes += "collection-#{page['collection']} "
       @classes += page['layout'] ? "template-#{page['layout']} " : ''
       @classes += page['slug'] ? "page-#{page['slug']} " : ''
-      @classes += page['subnav_items'] && page['hide_subnav'] != true ? 'has-subnav ' : ''
       @classes += (context['layout']['body_class'] ? "#{context['layout']['body_class']} " : '') + (page['body_class'] ? "#{page['body_class']} " : '')
 
       # Return results
